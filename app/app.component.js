@@ -9,7 +9,7 @@ System.register(['angular2/core', './card'], function(exports_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1, card_1;
-    var AppComponent;
+    var CARDS, AppComponent;
     return {
         setters:[
             function (core_1_1) {
@@ -19,18 +19,34 @@ System.register(['angular2/core', './card'], function(exports_1) {
                 card_1 = card_1_1;
             }],
         execute: function() {
+            CARDS = [
+                { "id": 2, "cardName": "Lotheb", "rarity": card_1.Rarity.Legendary },
+                { "id": 2, "cardName": "Dr.Boom", "rarity": card_1.Rarity.Legendary },
+                { "id": 2, "cardName": "Trion Fordring", "rarity": card_1.Rarity.Legendary },
+                { "id": 2, "cardName": "Deathwwing", "rarity": card_1.Rarity.Legendary },
+                { "id": 2, "cardName": "Thaddius", "rarity": card_1.Rarity.Legendary },
+                { "id": 2, "cardName": "Varian Wrynn", "rarity": card_1.Rarity.Legendary },
+                { "id": 2, "cardName": "Anub'arak", "rarity": card_1.Rarity.Legendary },
+                { "id": 2, "cardName": "Aviana", "rarity": card_1.Rarity.Legendary }
+            ];
             AppComponent = (function () {
                 function AppComponent() {
                     this.title = 'Hearthstone Cards';
-                    this.card = {
-                        cardName: "Flamestrike",
-                        rarity: card_1.Rarity.Rare
-                    };
+                    this.listOfCards = [
+                        { "id": 2, "cardName": "Lotheb", "rarity": card_1.Rarity.Legendary },
+                        { "id": 2, "cardName": "Dr.Boom", "rarity": card_1.Rarity.Legendary },
+                        { "id": 2, "cardName": "Trion Fordring", "rarity": card_1.Rarity.Legendary },
+                        { "id": 2, "cardName": "Deathwwing", "rarity": card_1.Rarity.Legendary },
+                        { "id": 2, "cardName": "Thaddius", "rarity": card_1.Rarity.Legendary },
+                        { "id": 2, "cardName": "Varian Wrynn", "rarity": card_1.Rarity.Legendary },
+                        { "id": 2, "cardName": "Anub'arak", "rarity": card_1.Rarity.Legendary },
+                        { "id": 2, "cardName": "Aviana", "rarity": card_1.Rarity.Legendary }
+                    ];
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <div class=\"jumbotron\">\n        <div class=\"container\">\n            <h1>{{title}}</h1>\n            <h3>{{card.cardName}}</h3>\n            <div class=\"input-group\">\n                <span class=\"input-group-addon\">Card Name</span>\n                <input type=\"text\" class=\"form-control\" [(ngModel)]=\"card.cardName\">\n            </div>\n        </div>\n    </div>\n    "
+                        template: "\n    <div class=\"jumbotron\">\n        <div class=\"container\">\n            <h1>{{title}}</h1>\n            <div class=\"input-group\">\n                <span class=\"input-group-addon\">Filter Name</span>\n                <input type=\"text\" class=\"form-control\" [(ngModel)]=\"card.cardName\">\n            </div>\n        </div>\n        \n        <ul>\n            <li *ngFor=\"#card of listOfCards\">\n                <span>{{card.cardName}}</span> {{card.rarity}}\n            </li>\n        </ul>\n            \n    </div>\n    "
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);

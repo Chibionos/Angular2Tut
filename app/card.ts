@@ -7,6 +7,7 @@ export enum Rarity {
 } 
 
 export class Card {
+    public id : number;
     public cardName : string;
     public rarity : Rarity = Rarity.Common;
 }
